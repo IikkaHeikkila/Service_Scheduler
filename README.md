@@ -13,6 +13,6 @@ Project work for Distributed Systems -course
     If you do any changes in code, cmd "docker-compose up --build" after that.
   </li>
   <li>
-    There is couple of examples in main() fucnction in /src/scheduler.py. You can create your own demonstrations in there.
+    There is couple of examples in main() fucnction in /src/scheduler.py.
   </li>
 </ul>
