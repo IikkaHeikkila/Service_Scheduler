@@ -1,0 +1,10 @@
+FROM python:3.7-slim
+
+WORKDIR /app
+
+RUN pip install asyncio
+
+COPY server1.py .
+COPY user-db.sqlite .
+
+CMD [ "python", "./server1.py" ]

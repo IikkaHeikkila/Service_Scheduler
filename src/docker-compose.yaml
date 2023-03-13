@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  server1:
+    build: 
+      context: .
+      dockerfile: Dockerfile-server1
+    expose:
+      - "8000"
+    networks:
+      - my_network
+
+  server2:
+    build: 
+      context: .
+      dockerfile: Dockerfile-server2
+    expose:
+      - "8001"
+    networks:
+      - my_network
+    volumes:
+      - ./post-db.sqlite:/app/post-db.sqlite
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile-scheduler
+    depends_on:
+      - server1
+      - server2
+    networks:
+      - my_network
+    volumes:
+      - ./user-db.sqlite:/app/user-db.sqlite
+
+networks:
+  my_network:
