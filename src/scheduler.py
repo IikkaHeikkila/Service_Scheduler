@@ -99,7 +99,7 @@ def main():
     """Some examples"""
     text = "I'm gonna write a new book"
     image_url = "Fake url"
-    user_id = 3
+    user_id = 1
     create_a_post(server1, server2, text, image_url, user_id)
     update_user_information(server1, server2, user_id)
     asyncio.run(load_user_page(server1, server2, user_id))
